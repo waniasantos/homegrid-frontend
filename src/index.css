@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+
+:root{
+  --bg: #0B1220;           /* fundo navy */
+  --bg2:#070A10;           /* fundo mais escuro */
+  --surface:#0F172A;       /* card */
+  --surface2:#101B2D;      /* card alt */
+  --border: rgba(255,255,255,.09);
+
+  --text:#E6EEF9;
+  --muted:#A8B3C7;
+
+  --primary:#23A2D9;       /* ciano (diagrama) */
+  --warn:#F0A30A;          /* amber (diagrama) */
+  --danger:#EF4444;
+  --ok:#22C55E;
+}
+
+html, body { height: 100%; }
+
+body{
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(35,162,217,0.20), transparent 60%),
+    radial-gradient(900px 500px at 95% 15%, rgba(240,163,10,0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  background-attachment: fixed; /* <- IMPORTANTE */
+  overflow-x: hidden;           /* evita “vazar” pro lado */
+}
+
+* { scrollbar-color: rgba(255,255,255,.18) transparent; }
