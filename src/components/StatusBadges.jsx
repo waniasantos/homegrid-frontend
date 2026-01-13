@@ -1,5 +1,5 @@
-// src/components/StatusBadges.jsx
 import React from "react";
+import { USE_MOCK } from "../lib/api";
 
 function fmtTime(d) {
   if (!d) return "--:--:--";
@@ -22,11 +22,11 @@ export function StatusBadges({ updatedAt, onReload }) {
       <span
         className="rounded-full border px-3 py-1 text-xs"
         style={{
-          borderColor: "rgba(59,130,246,.35)",
-          background: "rgba(59,130,246,.12)",
+          borderColor: USE_MOCK ? "rgba(59,130,246,.35)" : "rgba(34,197,94,.35)",
+          background: USE_MOCK ? "rgba(59,130,246,.12)" : "rgba(34,197,94,.12)",
         }}
       >
-        Mock
+        {USE_MOCK ? "Mock" : "API Real"}
       </span>
 
       <button

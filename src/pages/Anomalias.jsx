@@ -4,7 +4,6 @@ import { api } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { Modal } from "../components/Modal";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../components/State";
-import { StatusBadges } from "../components/StatusBadges";
 
 export default function Anomalias() {
   const { loading, error, data, updatedAt, reload } = useAsync(() => api.anomalias(), []);
@@ -16,17 +15,6 @@ export default function Anomalias() {
 
   return (
     <div className="space-y-4">
-      <div
-        className="rounded-2xl border p-4 flex items-center justify-between"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div>
-          <div className="text-xs opacity-70">HomeGrid</div>
-          <div className="text-lg font-semibold">Anomalias</div>
-        </div>
-        <StatusBadges updatedAt={updatedAt} onReload={reload} />
-      </div>
-
       {loading && <LoadingBlock title="Carregando anomalias..." />}
       {error && <ErrorBlock error={error} onRetry={reload} />}
 

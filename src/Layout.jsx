@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { USE_MOCK } from "../lib/api";
+import { USE_MOCK } from "./lib/api";
 
 function fmtTime(d) {
   if (!d) return "--:--:--";

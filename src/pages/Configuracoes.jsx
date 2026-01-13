@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { api } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { LoadingBlock, ErrorBlock } from "../components/State";
-import { StatusBadges } from "../components/StatusBadges";
 import { useToast } from "../components/Toast";
 
 export default function Configuracoes() {
@@ -43,17 +42,6 @@ export default function Configuracoes() {
 
   return (
     <div className="space-y-4">
-      <div
-        className="rounded-2xl border p-4 flex items-center justify-between"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div>
-          <div className="text-xs opacity-70">HomeGrid</div>
-          <div className="text-lg font-semibold">Configurações</div>
-        </div>
-        <StatusBadges updatedAt={updatedAt} onReload={reload} />
-      </div>
-
       {loading && <LoadingBlock title="Carregando configurações..." />}
       {error && <ErrorBlock error={error} onRetry={reload} />}
 

@@ -3,24 +3,12 @@ import React from "react";
 import { api } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../components/State";
-import { StatusBadges } from "../components/StatusBadges";
 
 export default function Dashboard() {
   const { loading, error, data, updatedAt, reload } = useAsync(() => api.dashboard(), []);
 
   return (
     <div className="space-y-4">
-      <div
-        className="rounded-2xl border p-4 flex items-center justify-between"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div>
-          <div className="text-xs opacity-70">HomeGrid</div>
-          <div className="text-lg font-semibold">Dashboard</div>
-        </div>
-        <StatusBadges updatedAt={updatedAt} onReload={reload} />
-      </div>
-
       {loading && <LoadingBlock title="Carregando dashboard..." />}
       {error && <ErrorBlock error={error} onRetry={reload} />}
 
@@ -77,7 +65,7 @@ export default function Dashboard() {
                       key={p.t}
                       className="flex-1 rounded-sm"
                       style={{
-                        height: `${Math.max(3, (p.kw / 1.2) * 90)}%`,
+                        height: `${Math.max(3, Math.min(100, (p.kw / 5) * 90))}%`,
                         background: "rgba(35,162,217,.35)",
                         border: "1px solid rgba(255,255,255,.05)",
                       }}

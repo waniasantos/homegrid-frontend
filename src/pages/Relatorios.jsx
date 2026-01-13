@@ -3,7 +3,6 @@ import React, { useMemo, useState } from "react";
 import { api } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../components/State";
-import { StatusBadges } from "../components/StatusBadges";
 
 // Se você já tem Card/Table/Select no seu ui.jsx, pode trocar pelos seus.
 // Aqui usei HTML simples + classes pra não quebrar.
@@ -25,19 +24,6 @@ export default function Relatorios() {
 
   return (
     <div className="space-y-4">
-      {/* Header */}
-      <div
-        className="rounded-2xl border p-4 flex items-center justify-between"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div>
-          <div className="text-xs opacity-70">HomeGrid</div>
-          <div className="text-lg font-semibold">Relatórios</div>
-        </div>
-
-        <StatusBadges updatedAt={updatedAt} onReload={reload} />
-      </div>
-
       {/* Conteúdo */}
       {loading && <LoadingBlock title="Carregando relatórios..." />}
       {error && <ErrorBlock error={error} onRetry={reload} />}
