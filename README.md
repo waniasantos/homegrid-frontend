@@ -1,6 +1,6 @@
 # HomeGrid — Frontend
 
-**HomeGrid Frontend** é uma aplicação React (Vite) para visualização e gerenciamento de dados do sistema HomeGrid. Este README descreve as funcionalidades, tecnologias usadas e instruções rápidas para executar o projeto localmente.
+**HomeGrid** é uma aplicação React (Vite) para visualização e gerenciamento de dados do sistema HomeGrid. Este README descreve as funcionalidades, tecnologias usadas e instruções rápidas para executar o projeto localmente.
 
 ## Integrantes
 
@@ -11,7 +11,7 @@ Wania Santos @waniasantos
 
 ---
 
-## ✨ Funcionalidades principais
+## Funcionalidades principais
 
 - **Dashboard:** Visão geral com gráficos e indicadores (usa `recharts`).
 - **Alertas:** Tela para listar e gerenciar alertas do sistema.
@@ -24,7 +24,7 @@ Wania Santos @waniasantos
 
 ---
 
-## 🧰 Stack / Dependências
+## Stack / Dependências
 
 - **Framework:** React 19
 - **Bundler / Dev server:** Vite
@@ -37,14 +37,14 @@ Wania Santos @waniasantos
 
 ---
 
-## ⚙️ Requisitos
+## Requisitos
 
 - Node.js 18+ (recomendado)
 - npm ou yarn
 
 ---
 
-## 🚀 Como executar (desenvolvimento)
+## Como executar (desenvolvimento)
 
 1. Clone o repositório e entre na pasta do frontend:
 
@@ -79,7 +79,7 @@ Abra http://localhost:5173 (ou a porta indicada no terminal).
 
 ---
 
-## 🛠 Scripts úteis
+## Scripts úteis
 
 - `npm run dev` — Inicia servidor de desenvolvimento (Vite)
 - `npm run build` — Gera build de produção em `dist/`
@@ -88,7 +88,7 @@ Abra http://localhost:5173 (ou a porta indicada no terminal).
 
 ---
 
-## 📁 Estrutura relevante do projeto
+## Estrutura relevante do projeto
 
 - `src/pages/` — Telas: `Dashboard`, `Alertas`, `Anomalias`, `Relatorios`, `Configuracoes`
 - `src/components/` — Componentes UI reutilizáveis
@@ -97,7 +97,7 @@ Abra http://localhost:5173 (ou a porta indicada no terminal).
 
 ---
 
-## 🧪 Modo Mock
+## Modo Mock
 
 Para ativar o modo de mock (útil para desenvolvimento sem backend disponível), defina em `.env`:
 
@@ -109,7 +109,7 @@ Ao iniciar com `npm run dev`, o app usará `src/lib/mockApi.js` para respostas s
 
 ---
 
-## 🧩 Build & Deploy
+## Build & Deploy
 
 1. Gere a build:
 
