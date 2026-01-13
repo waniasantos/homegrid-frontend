@@ -25,7 +25,7 @@ export default function Alertas() {
           </div>
 
           {!data?.items?.length ? (
-            <EmptyBlock title="Nenhum alerta no momento." subtitle="Tudo certo por aqui ✅" />
+            <EmptyBlock title="Nenhum alerta no momento." subtitle="Tudo certo por aqui." />
           ) : (
             <div className="space-y-3">
               {data.items.map((a) => (

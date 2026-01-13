@@ -43,13 +43,30 @@ async function getDashboard() {
       tarifa: 0.92
     },
     serie,
-    viloesHoje: [
-      { dispositivo: "Chuveiro", kwh: 3.3, custo: 3.04 },
-      { dispositivo: "Ar-condicionado", kwh: 2.17, custo: 1.99 },
-      { dispositivo: "Geladeira", kwh: 2.03, custo: 1.87 },
-      { dispositivo: "Iluminação", kwh: 1.04, custo: 0.96 },
-      { dispositivo: "TV", kwh: 0.98, custo: 0.90 },
-    ]
+    viloesHoje: []
+  };
+}
+
+async function getAnomalias() {
+  const response = await fetchJson(`/anomalias?limit=50`);
+  
+  if (!response?.items) {
+    return { updatedAt: nowIso(), items: [] };
+  }
+
+  const items = response.items.map(a => ({
+    id: a.id,
+    dispositivo: a.dispositivoId,
+    tipo: a.tipo,
+    severidade: a.severidade,
+    titulo: `Consumo ${a.percentualDesvio.toFixed(0)}% acima do esperado`,
+    descricao: `Consumo atual: ${(a.consumoAtual/1000).toFixed(2)}kW vs Esperado: ${(a.consumoEsperado/1000).toFixed(2)}kW`,
+    timestamp: a.timestamp
+  }));
+
+  return {
+    updatedAt: nowIso(),
+    items
   };
 }
 
@@ -64,7 +81,7 @@ export const api = {
     return { updatedAt: nowIso(), items: [] };
   },
   async anomalias() {
-    return { updatedAt: nowIso(), items: [] };
+    return getAnomalias();
   },
   async configuracoes() {
     return {

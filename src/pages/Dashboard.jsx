@@ -104,10 +104,6 @@ export default function Dashboard() {
                   </tbody>
                 </table>
               </div>
-
-              <div className="mt-3 text-xs opacity-70">
-                * Mock ativo. Depois é só trocar <b>VITE_USE_MOCK</b>.
-              </div>
             </div>
           </div>
         </>
